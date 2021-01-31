@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'fr.bbrassart'
+version '1.2.0'
+
+def bukkitVersion = '1.16.1'
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url 'https://maven.elmakers.com/repository/'
+    }
+
+    maven {
+        url 'https://maven.enginehub.org/repo/'
+    }
+
+    maven {
+        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+}
+
+dependencies {
+    implementation "org.bukkit:bukkit:$bukkitVersion-R0.1-SNAPSHOT"
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
+}
