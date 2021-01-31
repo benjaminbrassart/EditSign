@@ -5,7 +5,7 @@
 
 1. [For server admins](#for-server-admins)
 2. [For developers](#for-developers)
-3. [Reporting a bug](#for-server-admins)
+3. [Reporting a bug](#reporting-a-bug)
 
 ## For server admins
 ### Building from sources
