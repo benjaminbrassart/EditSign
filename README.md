@@ -111,3 +111,8 @@ To report a bug, please follow this protocol:
     + The complete list of plugins in use 
     + The steps to reproduce
     + The full stacktrace of the error
+   
+## Donating
+
+If you feel like it and above all if you can afford it, you can tip me
+on my [Patreon](https://www.patreon.com/benyoulp).
