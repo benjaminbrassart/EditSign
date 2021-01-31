@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'fr.bbrassart'
-version '1.2.1'
+version '1.2.2'
 
 def bukkitVersion = '1.16.1'
 
@@ -22,5 +22,4 @@ repositories {
 dependencies {
     implementation "org.bukkit:bukkit:$bukkitVersion-R0.1-SNAPSHOT"
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
-
 }

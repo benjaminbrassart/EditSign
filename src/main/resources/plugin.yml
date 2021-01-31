@@ -1,5 +1,22 @@
 name: EditSign
 main: fr.bbrassart.EditSign
-version: 1.2.1
+version: 1.2.2
 author: Benyou
 api-version: 1.13
+permissions:
+  editsign.*:
+    default: op
+    description: Gives access to all EditSign actions
+    children:
+      editsign.edit: true
+      editsign.color: true
+      editsign.place-copied: true
+  editsign.edit:
+    description: Allow a player to click-to-edit a sign
+    default: op
+  editsign.color:
+    description: Allow a player to use colors in a sign
+    default: op
+  editsign.place-copied:
+    description: Allow a player to place a cloned sign
+    default: op
