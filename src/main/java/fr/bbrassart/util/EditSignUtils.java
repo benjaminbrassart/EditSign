@@ -10,6 +10,7 @@ import org.bukkit.block.BlockState;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -17,7 +18,11 @@ import org.json.simple.parser.JSONParser;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
 
 public abstract class EditSignUtils {
 
@@ -106,7 +111,7 @@ public abstract class EditSignUtils {
         ItemStack item = e.getItem();
         Block block = e.getClickedBlock();
 
-        if (!e.isCancelled() && block != null) {
+        if (e.useInteractedBlock() != Event.Result.DENY && e.useItemInHand() != Event.Result.DENY && block != null) {
             if (p.hasPermission("editsign.place-copied")) {
                 if (item != null && e.getAction() == Action.RIGHT_CLICK_BLOCK) {
                     String[] lines = getLines(item);
@@ -134,6 +139,7 @@ public abstract class EditSignUtils {
 
                             block.setType(type, false);
                             sign = (Sign) block.getState();
+
                             org.bukkit.material.Sign signData = (org.bukkit.material.Sign) sign.getData();
 
                             signData.setFacingDirection(direction);
@@ -163,7 +169,8 @@ public abstract class EditSignUtils {
                     return (boolean) nbtTagCompound.getMethod("hasKeyOfType", String.class, int.class)
                             .invoke(tag, "EditSign", 9);
                 }
-            } catch (Exception ignored) { }
+            } catch (Exception ignored) {
+            }
         }
 
         return false;
@@ -197,7 +204,8 @@ public abstract class EditSignUtils {
                             }
                         }
                     }
-                } catch (Exception ignored) { }
+                } catch (Exception ignored) {
+                }
             }
         }
 
@@ -244,7 +252,8 @@ public abstract class EditSignUtils {
                         }
                     }
                 }
-            } catch (Exception ignored) { }
+            } catch (Exception ignored) {
+            }
         }
 
         return item;

@@ -3,9 +3,15 @@ plugins {
 }
 
 group 'fr.bbrassart'
-version '1.2.2'
+version '1.2.3'
 
 def bukkitVersion = '1.16.1'
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 repositories {
     mavenCentral()
@@ -21,5 +27,5 @@ repositories {
 
 dependencies {
     implementation "org.bukkit:bukkit:$bukkitVersion-R0.1-SNAPSHOT"
-    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation "com.googlecode.json-simple:json-simple:1.1.1"
 }
