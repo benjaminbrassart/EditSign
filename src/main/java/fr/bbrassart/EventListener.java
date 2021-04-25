@@ -38,7 +38,7 @@ public class EventListener implements Listener {
                             Sign sign = (Sign) block.getState();
 
                             for (int i = 0; i < 4; i++) {
-                                sign.setLine(i, ChatColor.translateAlternateColorCodes('&', sign.getLine(i)));
+                                sign.setLine(i, sign.getLine(i).replace('§', '&'));
                             }
 
                             pl.getUtils().update(sign);
